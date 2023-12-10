@@ -35,7 +35,7 @@ in both directories to start the application.
 
 ## Development
 
-In case you want to develop the app you can use command `npm run dev` for starting `api`. This restarts the process after file changes.
+In case you want to develop the app you can use command `npm run dev` for starting `api`. This restarts the process after file changes. Client will hot-reload changes with normal `npm start` command.
 
 ## Tests
 
