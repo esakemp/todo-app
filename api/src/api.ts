@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 
-import { routes } from './routes'
+import { taskRoutes } from './routes/tasks'
 
 export const api = express()
 
@@ -12,7 +12,7 @@ api.get('/ping', (req, res) => {
   res.status(200).send('pong')
 })
 
-api.use('/tasks', routes)
+api.use('/tasks', taskRoutes)
 
 api.use('*', (req, res) => {
   res.status(404).json({ error: 'unknown endpoint' })

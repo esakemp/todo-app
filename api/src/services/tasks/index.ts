@@ -1,5 +1,5 @@
-import { database } from '../db'
-import Task from '../db/models/Task'
+import { database } from '../../db'
+import Task from '../../db/models/Task'
 
 interface createNewTaskProps {
   text: string

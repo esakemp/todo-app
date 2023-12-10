@@ -6,7 +6,7 @@ import {
   findTask,
   getAllTasks,
   updateTask,
-} from '../services/taskService'
+} from '../../services/tasks'
 
 const getTasksHandler = async (req: Request, res: Response): Promise<void> => {
   const allTasks = await getAllTasks()
