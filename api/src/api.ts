@@ -15,5 +15,5 @@ api.get('/ping', (req, res) => {
 api.use('/tasks', taskRoutes)
 
 api.use('*', (req, res) => {
-  res.status(404).json({ error: 'unknown endpoint' })
+  res.status(404).send('unknown endpoint')
 })
