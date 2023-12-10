@@ -1,0 +1,37 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["/lib/**/*", "**/*.d.ts"],
+  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "rules": {
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "warn",
+    "@typescript-eslint/no-extra-semi": "off",
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/quotes": ["error", "single", { "avoidEscape": true }],
+    "computed-property-spacing": ["error", "never"],
+    "curly": "error",
+    "eqeqeq": "error",
+    "import/no-unresolved": 0,
+    "no-debugger": "error",
+    "no-nested-ternary": "error",
+    "no-trailing-spaces": "error",
+    "require-await": "warn",
+    "semi": [2, "never"]
+  }
+}
