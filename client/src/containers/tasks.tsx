@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 import { fetchAllTasks } from '../api/taskService'
 import { TaskContext, setTasks } from '../context/task'
 import { TaskList } from '../components/TaskList'
-import CreateModal from '../components/CreateModal'
+import { CreateModal } from '../components/CreateModal'
 
 export const TasksContainer = () => {
   const { dispatch } = useContext(TaskContext)

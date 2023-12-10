@@ -5,7 +5,7 @@ import { TaskType } from '../../schemas'
 import { patchTask } from '../../api/taskService'
 import { TaskContext, setTasks } from '../../context/task'
 
-import ModalContent from '../ModalContent'
+import { ModalContent } from '../ModalContent'
 
 export const UpdateModal = ({
   task,
@@ -81,5 +81,3 @@ export const UpdateModal = ({
     </Modal>
   )
 }
-
-export default UpdateModal

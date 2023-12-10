@@ -4,9 +4,9 @@ import { postNewTask } from '../../api/taskService'
 import { Button, Modal } from '@mui/material'
 import { TaskType } from '../../schemas'
 
-import ModalContent from '../ModalContent'
+import { ModalContent } from '../ModalContent'
 
-const CreateModal = () => {
+export const CreateModal = () => {
   const [text, setText] = useState<string>('')
   const [modalOpen, setModalOpen] = useState<boolean>(false)
   const [invalidText, setInvalidText] = useState<boolean>(false)
@@ -74,5 +74,3 @@ const CreateModal = () => {
     </div>
   )
 }
-
-export default CreateModal

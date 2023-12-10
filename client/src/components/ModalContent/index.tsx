@@ -14,7 +14,7 @@ type ModalContentProps = {
   disableButton?: boolean
 }
 
-const ModalContent = ({
+export const ModalContent = ({
   onChangeHandler,
   onClickHandler,
   invalidText,
@@ -43,5 +43,3 @@ const ModalContent = ({
     </Button>
   </Box>
 )
-
-export default ModalContent

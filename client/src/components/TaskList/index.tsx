@@ -98,17 +98,15 @@ export const TaskList = () => {
             </Box>
             <IconButton
               sx={{ marginLeft: 'auto' }}
-              onClick={(e) => deleteClickHandler(e, task.id)}
-            >
-              <Delete />
-            </IconButton>
-            <IconButton
               onClick={() => {
                 setTaskToUpdate(task)
                 setModalOpen(true)
               }}
             >
               <Edit />
+            </IconButton>
+            <IconButton onClick={(e) => deleteClickHandler(e, task.id)}>
+              <Delete />
             </IconButton>
           </Box>
         ))}
