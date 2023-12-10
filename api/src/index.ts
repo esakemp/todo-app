@@ -10,7 +10,7 @@ server.use('/api', api)
 
 const startServer = async () => {
   await connectToDb()
-  const PORT = 8080
+  const PORT = process.env.PORT || 8080
 
   server.listen(PORT, () => console.log(`Backend listening on port ${PORT}`))
 }

@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "tsc": "tsc",
-    "start": "node lib/index.js",
+    "start": "npm run tsc && node lib/index.js",
     "dev": "NODE_ENV=dev tsnd --respawn src/index.ts",
     "test": "NODE_ENV=test jest",
     "test:tdd": "npm run test -- --watch",
