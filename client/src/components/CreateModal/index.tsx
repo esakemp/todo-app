@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { TaskContext, setTasks } from '../../context/task'
-import { postNewTask } from '../../api/taskService'
 import { Button, Modal } from '@mui/material'
+
+import { postNewTask } from '../../api/taskService'
+import { TaskContext, setTasks } from '../../context/task'
 import { TaskType } from '../../schemas'
 
 import { ModalContent } from '../ModalContent'
