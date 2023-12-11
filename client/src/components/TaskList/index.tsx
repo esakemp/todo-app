@@ -1,11 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { Box, Checkbox, IconButton } from '@mui/material'
-import {
-  CheckCircle,
-  Delete,
-  Edit,
-  RadioButtonUnchecked,
-} from '@mui/icons-material'
+import { CheckCircle, Delete, RadioButtonUnchecked } from '@mui/icons-material'
 
 import { TaskType } from '../../schemas'
 import { deleteTask, patchTask } from '../../api/taskService'
@@ -13,10 +8,6 @@ import { TaskContext, setTasks } from '../../context/task'
 import { UpdateModal } from '../UpdateModal'
 
 export const TaskList = () => {
-  const [modalOpen, setModalOpen] = useState<boolean>(false)
-
-  const [taskToUpdate, setTaskToUpdate] = useState<TaskType>({} as TaskType)
-
   const { items, dispatch } = useContext(TaskContext)
 
   const { tasks } = items
@@ -53,17 +44,11 @@ export const TaskList = () => {
     )
 
     dispatch(setTasks(newTasks))
-    setModalOpen(false)
   }
 
   return (
     <Box>
       <h2>TASK LISTING</h2>
-      <UpdateModal
-        task={taskToUpdate}
-        modalOpen={modalOpen}
-        setModalOpen={setModalOpen}
-      />
       {tasks
         ?.sort(
           (a: TaskType, b: TaskType) =>
@@ -91,20 +76,13 @@ export const TaskList = () => {
             />
             <Box
               sx={{
-                overflow: 'scroll',
+                textOverflow: 'ellipsis',
+                overflow: 'hidden',
               }}
             >
               {task.completed ? <s>{task.text}</s> : task.text}
             </Box>
-            <IconButton
-              sx={{ marginLeft: 'auto' }}
-              onClick={() => {
-                setTaskToUpdate(task)
-                setModalOpen(true)
-              }}
-            >
-              <Edit />
-            </IconButton>
+            <UpdateModal task={task} />
             <IconButton onClick={(e) => deleteClickHandler(e, task.id)}>
               <Delete />
             </IconButton>

@@ -1,23 +1,17 @@
-import { Dispatch, SetStateAction, useContext, useState } from 'react'
-import { Modal } from '@mui/material'
+import { useContext, useState } from 'react'
+import { Box, IconButton, Modal } from '@mui/material'
 
 import { TaskType } from '../../schemas'
 import { patchTask } from '../../api/taskService'
 import { TaskContext, setTasks } from '../../context/task'
 
 import { ModalContent } from '../ModalContent'
+import { Edit } from '@mui/icons-material'
 
-export const UpdateModal = ({
-  task,
-  modalOpen,
-  setModalOpen,
-}: {
-  task: TaskType
-  modalOpen: boolean
-  setModalOpen: Dispatch<SetStateAction<boolean>>
-}) => {
+export const UpdateModal = ({ task }: { task: TaskType }) => {
   const [updatedText, setUpdatedText] = useState<string>()
   const [invalidText, setInvalidText] = useState<boolean>(false)
+  const [modalOpen, setModalOpen] = useState<boolean>(false)
 
   const { items, dispatch } = useContext(TaskContext)
 
@@ -60,24 +54,33 @@ export const UpdateModal = ({
   const disableUpdateButton = !updatedText || updatedText === task.text
 
   return (
-    <Modal
-      open={modalOpen}
-      onClose={() => {
-        setModalOpen(false)
-        setUpdatedText(undefined)
-      }}
-    >
-      <>
-        <ModalContent
-          onChangeHandler={onChangeHandler}
-          onClickHandler={onClickHandler}
-          invalidText={invalidText}
-          text={text}
-          buttonText="Update task"
-          titleText="Update task"
-          disableButton={disableUpdateButton}
-        />
-      </>
-    </Modal>
+    <Box style={{ marginLeft: 'auto' }}>
+      <Modal
+        open={modalOpen}
+        onClose={() => {
+          setModalOpen(false)
+          setUpdatedText(undefined)
+        }}
+      >
+        <>
+          <ModalContent
+            onChangeHandler={onChangeHandler}
+            onClickHandler={onClickHandler}
+            invalidText={invalidText}
+            text={text}
+            buttonText="Update task"
+            titleText="Update task"
+            disableButton={disableUpdateButton}
+          />
+        </>
+      </Modal>
+      <IconButton
+        onClick={() => {
+          setModalOpen(true)
+        }}
+      >
+        <Edit />
+      </IconButton>
+    </Box>
   )
 }
