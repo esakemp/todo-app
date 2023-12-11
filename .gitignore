@@ -26,7 +26,5 @@ dist-ssr
 
 # dotenv
 .env
-.env.*
-!.env.example
 
 data
