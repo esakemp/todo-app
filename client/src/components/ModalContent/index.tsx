@@ -37,10 +37,11 @@ export const ModalContent = ({
   disableButton,
 }: ModalContentProps): JSX.Element => (
   <Box sx={modalStyle}>
-    <h2>{titleText}</h2>
+    <h2 data-testid="modal-header">{titleText}</h2>
     <Box sx={{ marginBottom: '1rem' }}>
       <TextField
         fullWidth
+        data-testid="task-input-field"
         error={invalidText}
         label="Description"
         value={text}

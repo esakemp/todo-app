@@ -69,7 +69,11 @@ export const CreateModal = () => {
           />
         </>
       </Modal>
-      <Button variant="contained" onClick={() => setModalOpen(true)}>
+      <Button
+        id="button-open-create-task-modal"
+        variant="contained"
+        onClick={() => setModalOpen(true)}
+      >
         ADD TASK
       </Button>
     </div>

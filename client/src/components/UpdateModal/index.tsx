@@ -75,6 +75,7 @@ export const UpdateModal = ({ task }: { task: TaskType }) => {
         </>
       </Modal>
       <IconButton
+        data-testid="icon-button-update"
         onClick={() => {
           setModalOpen(true)
         }}
