@@ -57,4 +57,14 @@ This will rerun tests after file changes
 
 ### Client
 
-TODO
+Client has few tests to check that content is rendered correctly
+
+```
+npm run test
+```
+
+For development purposes you can use command
+
+```
+npm run test:tdd
+```
